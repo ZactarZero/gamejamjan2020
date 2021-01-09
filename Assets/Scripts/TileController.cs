@@ -10,6 +10,9 @@ public class TileController : MonoBehaviour
     public GameObject topIn, bottomIn, rightIn, leftIn;
     public TurretType turretType;
 
+    public bool isGroundTile;
+    public GameObject nextGroundTile;
+
     void Start()
     {
         
@@ -22,48 +25,16 @@ public class TileController : MonoBehaviour
 
     public void UpdateSides()
     {
-        if (topIsOut)
-        {
-            topOut.SetActive(true);
-            topIn.SetActive(false);
-        }
-        else
-        {
-            topOut.SetActive(false);
-            topIn.SetActive(true);
-        }
+        topOut.SetActive(topIsOut);
+        topIn.SetActive(!topIsOut);
 
-        if (bottomIsOut)
-        {
-            bottomOut.SetActive(true);
-            bottomIn.SetActive(false);
-        }
-        else
-        {
-            bottomOut.SetActive(false);
-            bottomIn.SetActive(true);
-        }
+        bottomOut.SetActive(bottomIsOut);
+        bottomIn.SetActive(!bottomIsOut);
 
-        if (rightIsOut)
-        {
-            rightOut.SetActive(true);
-            rightIn.SetActive(false);
-        }
-        else
-        {
-            rightOut.SetActive(false);
-            rightIn.SetActive(true);
-        }
+        rightOut.SetActive(rightIsOut);
+        rightIn.SetActive(!rightIsOut);
 
-        if (leftIsOut)
-        {
-            leftOut.SetActive(true);
-            leftIn.SetActive(false);
-        }
-        else
-        {
-            leftOut.SetActive(false);
-            leftIn.SetActive(true);
-        }
+        leftOut.SetActive(leftIsOut);
+        leftIn.SetActive(!leftIsOut);
     }
 }
