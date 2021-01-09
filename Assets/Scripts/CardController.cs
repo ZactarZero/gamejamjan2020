@@ -21,12 +21,12 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         clickLayer = GameObject.FindGameObjectsWithTag("ClickLayer")[0];
         pc = GameObject.FindGameObjectsWithTag("PlayerController")[0].GetComponent<PlayerController>();
-        topImage.sprite = cardSO.topImage;
-        bottomImage.sprite = cardSO.bottomImage;
-        rightImage.sprite = cardSO.rightImage;
-        leftImage.sprite = cardSO.leftImage;
-        turretImage.sprite = cardSO.turretImage;
-        cardNameText.text = cardSO.cardName;
+        //topImage.sprite = cardSO.topImage;
+        //bottomImage.sprite = cardSO.bottomImage;
+        //rightImage.sprite = cardSO.rightImage;
+        //leftImage.sprite = cardSO.leftImage;
+        //turretImage.sprite = cardSO.turretImage;
+        //cardNameText.text = cardSO.cardName;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

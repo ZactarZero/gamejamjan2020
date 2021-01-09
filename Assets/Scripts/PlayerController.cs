@@ -45,7 +45,13 @@ public class PlayerController : MonoBehaviour
                 } 
                 else
                 {
-                    SpawnTile(pos);
+                    if (((((int)pos.x + 9 - 1) < 0) || (grid[(int)pos.x + 9 - 1, (int)pos.y + 5] == null) || (grid[(int)pos.x + 9 - 1, (int)pos.y + 5].rightIsOut != selectedCard.cardSO.leftIsOut))
+                        && ((((int)pos.x + 9 + 1) >= 19) || (grid[(int)pos.x + 9 + 1, (int)pos.y + 5] == null) || (grid[(int)pos.x + 9 + 1, (int)pos.y + 5].leftIsOut != selectedCard.cardSO.rightIsOut))
+                        && ((((int)pos.y + 5 - 1) < 0) || (grid[(int)pos.x + 9, (int)pos.y + 5 - 1] == null) || (grid[(int)pos.x + 9, (int)pos.y + 5 - 1].topIsOut != selectedCard.cardSO.bottomIsOut))
+                        && ((((int)pos.y + 5 + 1) >= 11) || (grid[(int)pos.x + 9, (int)pos.y + 5 + 1] == null) || (grid[(int)pos.x + 9, (int)pos.y + 5 + 1].bottomIsOut != selectedCard.cardSO.topIsOut)))
+                    {
+                        SpawnTile(pos);
+                    }
                 }
             }
         }
@@ -68,6 +74,9 @@ public class PlayerController : MonoBehaviour
 
         grid[(int)pos.x + 9, (int)pos.y + 5] = newTile;
         Debug.Log((pos.x + 9) + ", " + (pos.y + 5));
+
+        Destroy(selectedCard.gameObject);
+        selectedCard = null;
     }
 
     void SpawnCard()
