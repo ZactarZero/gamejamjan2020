@@ -8,6 +8,7 @@ public class TileController : MonoBehaviour
     public bool topIsOut, bottomIsOut, rightIsOut, leftIsOut;
     public GameObject topOut, bottomOut, rightOut, leftOut;
     public GameObject topIn, bottomIn, rightIn, leftIn;
+    public TurretType turretType;
 
     public bool isGroundTile;
     public GameObject nextGroundTile;
