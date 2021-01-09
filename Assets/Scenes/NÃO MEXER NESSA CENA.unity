@@ -395,6 +395,15 @@ MonoBehaviour:
   - {fileID: 2061756681}
   - {fileID: 516525283}
   canvas: {fileID: 1364055706}
+  topImageIn: {fileID: 21300000, guid: 8ba778263cbef01418f5529acd5abf0c, type: 3}
+  topImageOut: {fileID: 21300000, guid: 50cbd9af49a22124e83901190d82c948, type: 3}
+  bottomImageIn: {fileID: 21300000, guid: 8ba778263cbef01418f5529acd5abf0c, type: 3}
+  bottomImageOut: {fileID: 21300000, guid: 81674a7284e3a6b4aadbae275f73d597, type: 3}
+  rightImageIn: {fileID: 21300000, guid: 8ba778263cbef01418f5529acd5abf0c, type: 3}
+  rightImageOut: {fileID: 21300000, guid: f64497906b6e0574eb78282b6160a990, type: 3}
+  leftImageIn: {fileID: 21300000, guid: 8ba778263cbef01418f5529acd5abf0c, type: 3}
+  leftImageOut: {fileID: 21300000, guid: ec17db1b73cedfc46875f1ee84e469b4, type: 3}
+  assaultTurret: {fileID: 0}
   selectedCard: {fileID: 0}
   cardsInHand:
   - {fileID: 0}

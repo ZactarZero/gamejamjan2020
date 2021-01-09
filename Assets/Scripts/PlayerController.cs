@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public GameObject tilePrefab, cardPrefab;
     public Transform[] cardPositions = new Transform[5];
     public Transform canvas;
+    public Sprite topImageIn, topImageOut, bottomImageIn, bottomImageOut, rightImageIn, rightImageOut, leftImageIn, leftImageOut;
+    public Sprite assaultTurret;
 
     public CardController selectedCard;
     public TileController[,] grid = new TileController[19, 11];
@@ -87,6 +89,13 @@ public class PlayerController : MonoBehaviour
         cardSO.bottomIsOut = rand.NextDouble() >= 0.5;
         cardSO.rightIsOut = rand.NextDouble() >= 0.5;
         cardSO.leftIsOut = rand.NextDouble() >= 0.5;
+        cardSO.topImage = cardSO.topIsOut ? topImageOut : topImageIn;
+        cardSO.bottomImage = cardSO.bottomIsOut ? bottomImageOut : bottomImageIn;
+        cardSO.rightImage = cardSO.rightIsOut ? rightImageOut : rightImageIn;
+        cardSO.leftImage = cardSO.leftIsOut ? leftImageOut : leftImageIn;
+        //double turrent_rand = rand.NextDouble();
+        cardSO.turretImage = assaultTurret;
+        cardSO.turretType = TurretType.Assault;
         Debug.Log(cardSO.topIsOut + ", " + cardSO.bottomIsOut + ", " + cardSO.rightIsOut + ", " + cardSO.leftIsOut);
         for (int i = 0; i < 5; i++)
         {
@@ -94,6 +103,7 @@ public class PlayerController : MonoBehaviour
             {
                 CardController newCard = Instantiate(cardPrefab, cardPositions[i].position, Quaternion.identity, canvas).GetComponent<CardController>();
                 newCard.cardSO = cardSO;
+                newCard.UpdateImages();
                 cardsInHand[i] = newCard;
                 break;
             }

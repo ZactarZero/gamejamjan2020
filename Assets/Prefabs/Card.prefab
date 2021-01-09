@@ -317,12 +317,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSO: {fileID: 0}
-  topImage: {fileID: 0}
-  bottomImage: {fileID: 0}
-  rightImage: {fileID: 0}
-  leftImage: {fileID: 0}
-  turretImage: {fileID: 0}
-  cardNameText: {fileID: 0}
+  topImage: {fileID: 5457723623365792950}
+  bottomImage: {fileID: 832071192836826083}
+  rightImage: {fileID: 9043588450305162618}
+  leftImage: {fileID: 8815170235867048025}
+  turretImage: {fileID: 4162764015241489032}
+  cardNameText: {fileID: 308002735498737768}
 --- !u!114 &7862166108006124747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 6736996879641262882}
   - component: {fileID: 832071192836826083}
   m_Layer: 5
-  m_Name: Down
+  m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
