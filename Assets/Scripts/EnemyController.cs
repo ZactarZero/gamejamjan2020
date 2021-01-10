@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +48,15 @@ public class EnemyController : MonoBehaviour
     private void SetNextTile(GameObject nextCurrentTile)
     {
         currentTile = nextCurrentTile;
-        nextTile = currentTile.GetComponent<TileController>().nextGroundTile;
+
+        try
+        {
+            nextTile = currentTile.GetComponent<TileController>().nextGroundTile;
+        }
+        catch (Exception e)
+        {
+            Destroy(gameObject);
+        }
 
         if (nextTile == null)
         {
