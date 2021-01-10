@@ -86,7 +86,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Damage(int damage)
+    public bool Damage(int damage)
     {
         curHealth -= damage;
 
@@ -95,7 +95,9 @@ public class EnemyController : MonoBehaviour
         if (curHealth <= 0)
         {
             Destroy(gameObject);
+            return true;
         }
+        return false;
     }
 }
 

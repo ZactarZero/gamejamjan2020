@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class PlayerController : MonoBehaviour
@@ -10,10 +11,15 @@ public class PlayerController : MonoBehaviour
     public Transform canvas;
     public Sprite topImageIn, topImageOut, bottomImageIn, bottomImageOut, rightImageIn, rightImageOut, leftImageIn, leftImageOut;
     public Sprite assaultTurret;
+    public Text pointsUI;
 
     public CardController selectedCard;
     public TileController[,] grid = new TileController[19, 11];
     public CardController[] cardsInHand = new CardController[5];
+
+    public float points = 0;
+    public float enemiesKilled = 0;
+    public float lastCardPoints = 0;
 
     void Start()
     {
@@ -108,5 +114,24 @@ public class PlayerController : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void EnemyKilled()
+    {
+        enemiesKilled++;
+        points += 100;
+
+        if (points - lastCardPoints >= 1000)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (cardsInHand[i] == null)
+                {
+                    SpawnCard();
+                    lastCardPoints = points;
+                }
+            }
+        }
+        pointsUI.text = "Score: " + points;
     }
 }

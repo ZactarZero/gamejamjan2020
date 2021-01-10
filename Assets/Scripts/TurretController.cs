@@ -18,10 +18,13 @@ public class TurretController : MonoBehaviour
     private GameObject target = null;
     private bool hasTarget = false;
 
+    private PlayerController pc;
+
     // Start is called before the first frame update
     void Start()
     {
         lineRenderer.gameObject.SetActive(false);
+        pc = GameObject.FindGameObjectWithTag("PlayerController").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -41,7 +44,8 @@ public class TurretController : MonoBehaviour
             lineRenderer.SetPosition(1, endPoint);
             lineRenderer.gameObject.SetActive(true);
 
-            target.GetComponent<EnemyController>().Damage(damage);
+            if (target.GetComponent<EnemyController>().Damage(damage))
+                pc.EnemyKilled();
 
             lineExists = true;
             attackDebounce = true;
