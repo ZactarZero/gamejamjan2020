@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        
         for (int i=0; i<19; i++)
         {
             for (int j = 0; j < 11; j++)
@@ -30,9 +31,15 @@ public class PlayerController : MonoBehaviour
                 grid[i, j] = null;
             }
         }
+        GameObject[] ground_tiles = GameObject.FindGameObjectsWithTag("Ground");
+        for (int i = 0; i < ground_tiles.Length; i++)
+        {
+            grid[(int)ground_tiles[i].transform.position.x + 9, (int)ground_tiles[i].transform.position.y + 5] = ground_tiles[i].GetComponent<TileController>();
+        }
         for (int i = 0; i < 5; i++)
         {
             cardsInHand[i] = null;
+            SpawnCard();
         }
     }
 

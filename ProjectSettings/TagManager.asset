@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ClickLayer
   - PlayerController
+  - Ground
   layers:
   - Default
   - TransparentFX
