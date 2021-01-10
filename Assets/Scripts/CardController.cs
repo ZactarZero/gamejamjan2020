@@ -14,12 +14,12 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public Image turretImage;
     public Text cardNameText;
 
-    private GameObject clickLayer;
+    private MeshCollider clickLayer;
     private PlayerController pc;
 
     void Start()
     {
-        clickLayer = GameObject.FindGameObjectsWithTag("ClickLayer")[0];
+        clickLayer = GameObject.FindGameObjectsWithTag("ClickLayer")[0].GetComponent<MeshCollider>();
         pc = GameObject.FindGameObjectsWithTag("PlayerController")[0].GetComponent<PlayerController>();
     }
 
@@ -35,12 +35,12 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        clickLayer.SetActive(false);
+        clickLayer.enabled = false;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        clickLayer.SetActive(true);
+        clickLayer.enabled = true;
     }
 
     public void OnPointerDown(PointerEventData eventData)
