@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             cardsInHand[i] = null;
-            SpawnCard();
         }
+        StartCoroutine(SpawnCardsDelay());
     }
 
     void Update()
@@ -139,5 +139,19 @@ public class PlayerController : MonoBehaviour
             }
         }
         pointsUI.text = "Score: " + points;
+    }
+
+    IEnumerator SpawnCardsDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.1f);
+        SpawnCard();
+        yield return new WaitForSecondsRealtime(0.1f);
+        SpawnCard();
+        yield return new WaitForSecondsRealtime(0.1f);
+        SpawnCard();
+        yield return new WaitForSecondsRealtime(0.1f);
+        SpawnCard();
+        yield return new WaitForSecondsRealtime(0.1f);
+        SpawnCard();
     }
 }
