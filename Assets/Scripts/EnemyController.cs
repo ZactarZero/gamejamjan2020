@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public float speed = 1f;
     public float tileEnteringDistance = 0.1f;
+    public int damage = 10;
 
     public int maxHealth = 100;
     private int curHealth;
@@ -14,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public GameObject startingTile;
     private GameObject currentTile;
     private GameObject nextTile;
+
+    public TowerController tower;
 
     public HealthBarController healthBar;
 
@@ -55,11 +58,13 @@ public class EnemyController : MonoBehaviour
         }
         catch (Exception)
         {
+            tower.Damage(damage);
             Destroy(gameObject);
         }
 
         if (nextTile == null)
         {
+            tower.Damage(damage);
             Destroy(gameObject);
         }
 

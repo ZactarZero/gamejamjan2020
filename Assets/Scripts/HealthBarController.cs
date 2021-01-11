@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HealthBarController : MonoBehaviour
 {
-    public EnemyController enemyController;
     public GameObject fillingHealthBar;
     public GameObject totalHealthBar;
     public float scaleToPositionRatio = 0.32f;
+    public float healthBarWidth = 2f;
 
     private float xPosition;
 
     public void UpdateHealthBar(float healthPercentage)
     {
-        fillingHealthBar.transform.localScale = new Vector2((1 - healthPercentage) * 2, fillingHealthBar.transform.localScale.y);
+        fillingHealthBar.transform.localScale = new Vector2((1 - healthPercentage) * healthBarWidth, fillingHealthBar.transform.localScale.y);
 
         xPosition = totalHealthBar.transform.localScale.x * scaleToPositionRatio - scaleToPositionRatio * fillingHealthBar.transform.localScale.x;
 

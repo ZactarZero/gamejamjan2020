@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public float enemySpawnDelay;
     public float waveTransitionDelay;
 
+    public TowerController tower;
+
     private int currentWave = 0;
     private bool haveAllWavesFinished = false;
 
@@ -33,7 +35,10 @@ public class GameController : MonoBehaviour
                         enemiesPerWave[currentWave]--;
 
                         GameObject enemy = Instantiate(enemyPrefab);
-                        enemy.GetComponent<EnemyController>().startingTile = enemyStartingTile;
+                        EnemyController enemyController = enemy.GetComponent<EnemyController>();
+
+                        enemyController.startingTile = enemyStartingTile;
+                        enemyController.tower = tower;
 
                         hasEnemySpawned = true;
                     }
