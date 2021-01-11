@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
         cardSO.bottomImage = cardSO.bottomIsOut ? bottomImageOut : bottomImageIn;
         cardSO.rightImage = cardSO.rightIsOut ? rightImageOut : rightImageIn;
         cardSO.leftImage = cardSO.leftIsOut ? leftImageOut : leftImageIn;
-        //double turrent_rand = rand.NextDouble();
         cardSO.turretImage = assaultTurret;
         cardSO.turretType = TurretType.Assault;
         Debug.Log(cardSO.topIsOut + ", " + cardSO.bottomIsOut + ", " + cardSO.rightIsOut + ", " + cardSO.leftIsOut);

@@ -29,8 +29,8 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         bottomImage.sprite = cardSO.bottomImage;
         rightImage.sprite = cardSO.rightImage;
         leftImage.sprite = cardSO.leftImage;
-        //turretImage.sprite = cardSO.turretImage;
-        //cardNameText.text = cardSO.cardName;
+        turretImage.sprite = cardSO.turretImage;
+        cardNameText.text = "Assault Turret";
     }
 
     public void OnPointerEnter(PointerEventData eventData)

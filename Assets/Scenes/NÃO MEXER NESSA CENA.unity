@@ -2577,7 +2577,7 @@ MonoBehaviour:
   rightImageOut: {fileID: 21300000, guid: f64497906b6e0574eb78282b6160a990, type: 3}
   leftImageIn: {fileID: 21300000, guid: 8ba778263cbef01418f5529acd5abf0c, type: 3}
   leftImageOut: {fileID: 21300000, guid: ec17db1b73cedfc46875f1ee84e469b4, type: 3}
-  assaultTurret: {fileID: 0}
+  assaultTurret: {fileID: 21300000, guid: f6e4ff4fa68eb6e47be1427b0ba6a218, type: 3}
   pointsUI: {fileID: 2034577468}
   selectedCard: {fileID: 0}
   cardsInHand:
