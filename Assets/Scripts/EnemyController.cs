@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
         {
             nextTile = currentTile.GetComponent<TileController>().nextGroundTile;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Destroy(gameObject);
         }
