@@ -6739,7 +6739,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Points: 0'
+  m_Text: 'Score: 0'
 --- !u!222 &2034577469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6905,7 +6905,7 @@ MonoBehaviour:
   enemyStartingTile: {fileID: 18365168}
   enemiesPerWave: 0200000004000000060000000a0000000c0000000f0000001200000014000000190000001e000000
   enemySpawnDelay: 1
-  waveTransitionDelay: 45
+  waveTransitionDelay: 15
 --- !u!1 &2061756680
 GameObject:
   m_ObjectHideFlags: 0

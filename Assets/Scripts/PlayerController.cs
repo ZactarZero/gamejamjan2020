@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         enemiesKilled++;
         points += 100;
 
-        if (points - lastCardPoints >= 1000)
+        if (points - lastCardPoints >= 1250)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
                 {
                     SpawnCard();
                     lastCardPoints = points;
+                    break;
                 }
             }
         }
